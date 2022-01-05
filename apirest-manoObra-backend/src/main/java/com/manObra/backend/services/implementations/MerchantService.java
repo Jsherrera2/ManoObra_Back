@@ -13,6 +13,17 @@ import com.manObra.backend.services.interfaces.IMerchantService;
 @Service
 public class MerchantService implements IMerchantService {
 	
+		//Base salary year 2022
+		private int salary = 425; 
+		
+		//Basic working hours 
+		private int total_hours = 240;
+		
+		//Basic working days
+		private int total_days = 30;
+		
+		//
+		private float cost;
 	@Autowired
 	private IMerchant dao;
 
@@ -57,6 +68,15 @@ public class MerchantService implements IMerchantService {
 	public List<Merchant> findAll() {
 		
 		return (List<Merchant>) dao.findAll();
+	}
+
+	
+	@Override
+	public float HourlyValue(int hoursT) {
+		Merchant m = new Merchant();
+		this.cost = (this.salary/this.total_hours)*hoursT;
+		m.setCost(cost);
+		return m.getCost();
 	}
 
 	

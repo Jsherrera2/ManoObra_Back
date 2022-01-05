@@ -23,25 +23,20 @@ public class Merchant  implements Serializable{
 	@Column(name = "id_mer")
 	private Long idMerchant;
 	
-	
-	//Base salary year 2022
-	private int salary = 425; 
-	
-	private int total_hours = 240;
-	
-	private float valorH;
-	//Labor cosst
-	@Column(name = "cost")
-	private float cost;
-	
-	
+	//Administrativo por dias
+	//Obrero por horas
 	//Working hours
+
 	@Column(name = "hours")
 	private int hours;
 	
 	//Working days
-	@Column(name = "days")
-	private int days;
+	//@Column(name = "days")
+	//private int days;
+	
+	//Labor cosst
+	@Column(name = "cost")
+	private float cost;
 	
 	
 	public Merchant() {
@@ -65,15 +60,6 @@ public class Merchant  implements Serializable{
 	}
 
 
-	public int getSalary() {
-		return salary;
-	}
-
-
-	public void setSalary(int salary) {
-		this.salary = salary;
-	}
-
 
 	public int getHours() {
 		return hours;
@@ -85,37 +71,16 @@ public class Merchant  implements Serializable{
 	}
 
 
-	public int getDays() {
+	/*public int getDays() {
 		return days;
 	}
 
 
 	public void setDays(int days) {
 		this.days = days;
-	}
+	}*/
 	
 	
-	
-	
-	public int getTotal_hours() {
-		return total_hours;
-	}
-
-
-	public void setTotal_hours(int total_hours) {
-		this.total_hours = total_hours;
-	}
-
-
-	public float getValorH() {
-		return valorH;
-	}
-
-
-	public void setValorH(float valorH) {
-		this.valorH = valorH;
-	}
-
 
 	public float getCost() {
 		return cost;
@@ -125,15 +90,7 @@ public class Merchant  implements Serializable{
 	public void setCost(float cost) {
 		this.cost = cost;
 	}
+	
 
-
-	public float HourlyValue(int salary, int hoursT) {
-		this.valorH = this.salary/this.total_hours;
-		System.out.println(valorH);
-		return this.valorH;		
-	}
-	
-	
-	
 
 }

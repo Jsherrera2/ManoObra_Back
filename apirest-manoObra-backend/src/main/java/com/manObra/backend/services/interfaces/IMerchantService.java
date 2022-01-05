@@ -14,5 +14,10 @@ public interface IMerchantService {
 	
 	public List<Merchant> findAll();
 	
+	
+	public float HourlyValue(int hoursT);
+	
+	//public float DailyValue (int daysT) ;
+	
 
 }
